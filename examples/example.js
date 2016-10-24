@@ -1,4 +1,4 @@
-var Nxt = require('./index');
+var Nxt = require('../index');
 
 /**
  * Create a new instance of our client
@@ -16,10 +16,10 @@ var Nxt = require('./index');
  *
  */
 var client = new Nxt({
-  protocol: 'https',
-  host: 'nxt9.y.cz',
+  protocol: 'http',
+  host: 'de009.static.nxt-nodes.net',
   port: 7876,
-  eventTimeout: 2,
+  eventTimeout: 5,
 });
 
 /**
