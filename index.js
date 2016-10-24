@@ -11,7 +11,7 @@ module.exports = function(options) {
     return new Error('Missing arguments');
   }
 
-  if (options.protocol == 'https' || options.protocl == 'http') {
+  if (options.protocol == 'https' || options.protocol == 'http') {
     options.protocol = options.protocol + ':';
   }
 
