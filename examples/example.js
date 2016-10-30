@@ -19,7 +19,7 @@ var client = new Nxt({
   protocol: 'http',
   host: 'de009.static.nxt-nodes.net',
   port: 7876,
-  eventTimeout: 5,
+  eventTimeout: 300, // 5 min
 });
 
 /**
@@ -37,7 +37,7 @@ client.request('getPeers', { active: true }, function(data) {
  * For a list of possible events see:
  * https://nxtwiki.org/wiki/The_Nxt_API#Event_Register
  */
-client.on('Block.BLOCK_PUSHED', function(data) {
+client.event.on('Block.BLOCK_PUSHED', function(data) {
   console.log(
     '%d new block(s) - Block ID(s): ',
     data.length,
@@ -48,7 +48,7 @@ client.on('Block.BLOCK_PUSHED', function(data) {
 /**
  * Error handler
  */
-client.on('error', function(err) {
+client.event.on('error', function(err) {
   // An error occured
   console.log(err);
 });
