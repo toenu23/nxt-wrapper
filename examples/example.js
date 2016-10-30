@@ -8,6 +8,7 @@ var Nxt = require('../index');
  * protocol: http or https (required)
  * host: IP or hostname (required)
  * port: Defaults to 7876
+ * eventLoop: Whether to register for events or not
  * eventTimeout: Interval in seconds for polling the server for new events
  * (Default: 10)
  *
@@ -19,6 +20,7 @@ var client = new Nxt({
   protocol: 'http',
   host: 'de009.static.nxt-nodes.net',
   port: 7876,
+  eventLoop: true,
   eventTimeout: 300, // 5 min
 });
 
@@ -52,3 +54,12 @@ client.event.on('error', function(err) {
   // An error occured
   console.log(err);
 });
+
+/**
+ * Exit
+ * exit(true) will force exit (close TCP socket immediately)
+ */
+setTimeout(function() {
+  console.log('Exiting ...');
+  client.exit();
+}, 10000);
