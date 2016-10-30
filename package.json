@@ -1,6 +1,6 @@
 {
   "name": "nxt-wrapper",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Minimal wrapper for Nxt API",
   "main": "index.js",
   "devDependencies": {},
